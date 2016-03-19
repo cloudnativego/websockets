@@ -5,6 +5,9 @@ X_AUTHZERO_ID=(myid)
 X_AUTHZERO_SECRET=(mysecret)
 X_AUTHZERO_DOMAIN=(myauthdomain)
 X_AUTHZERO_CALLBACK=(mycallbackurl)
+
+X_PUBNUB_KEY_PUBLISH=(pubnub publish key)
+X_PUBNUB_KEY_SUBSCRIBE=(pubnub subscribe key)
 ===================================
 "
 
