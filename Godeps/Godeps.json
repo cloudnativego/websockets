@@ -1,0 +1,57 @@
+{
+	"ImportPath": "github.com/cloudnativego/websockets",
+	"GoVersion": "go1.6",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/astaxie/beego/session",
+			"Comment": "v1.6.1-3-g8881634",
+			"Rev": "88816348b92863cc17109721e39e069c3209c206"
+		},
+		{
+			"ImportPath": "github.com/astaxie/beego/utils",
+			"Comment": "v1.6.1-3-g8881634",
+			"Rev": "88816348b92863cc17109721e39e069c3209c206"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry-community/go-cfenv",
+			"Comment": "v1.12",
+			"Rev": "c682e189b94b0b2ec6edf12363df2eecf29d7256"
+		},
+		{
+			"ImportPath": "github.com/cloudnativego/cf-tools",
+			"Rev": "dc8d414d5a043d522e3750610023aa8994abaaff"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/negroni",
+			"Comment": "v0.1-70-gc7477ad",
+			"Rev": "c7477ad8e330bef55bf1ebe300cf8aa67c492d1b"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Rev": "1c83b3eabd45b6d76072b66b746c20815fb2872d"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Rev": "9c068cf16d982f8bd444b8c352acbeec34c4fe5b"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/mapstructure",
+			"Rev": "281073eb9eb092240d33ef253c404f1cca550309"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "db8e4de5b2d6653f66aea53094624468caad15d2"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2",
+			"Rev": "ad0128250e8fba646a92ca9129716e523d63ef9f"
+		},
+		{
+			"ImportPath": "golang.org/x/oauth2/internal",
+			"Rev": "ad0128250e8fba646a92ca9129716e523d63ef9f"
+		}
+	]
+}
