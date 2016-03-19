@@ -6,3 +6,7 @@ userprovided:
     secret: {{.AUTHZERO_SECRET}}
     domain: {{.AUTHZERO_DOMAIN}}
     callback: {{.AUTHZERO_CALLBACK}}
+- name: pubnub
+  credentials:
+    pubkey: {{.PUBNUB_KEY_PUBLISH}}
+    subkey: {{.PUBNUB_KEY_SUBSCRIBE}}

@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Chat</title>
+  <script src="http://cdn.pubnub.com/pubnub-3.14.4.min.js"></script>
+
+  <script>
+  var source = "{{ .Email }}";
+
+  console.log("Got here");
+
+  pubnub = PUBNUB({
+      publish_key   : '{{ .PubKey }}',
+      subscribe_key : '{{ .SubKey }}'
+  })
+
+  console.log("Subscribing..");
+
+  pubnub.subscribe({
+      channel : "hello_world",
+      message : function (message, envelope, channelOrGroup, time, channel) {
+        console.log(
+        "Message Received." + "\n" +
+        "Channel or Group: " + JSON.stringify(channelOrGroup) + "\n" +
+        "Channel: " + JSON.stringify(channel) + "\n" +
+        "Message: " + JSON.stringify(message) + "\n" +
+        "Time: " + time + "\n" +
+        "Raw Envelope: " + JSON.stringify(envelope)
+      );
+      var newDiv = document.createElement('div')
+      newDiv.innerHTML = message
+      var oldDiv = document.getElementById('chatLog')
+      oldDiv.appendChild(newDiv)
+    },
+      connect: pub
+  })
+
+  function pub(txt) {
+     console.log("About to publish: " + txt);
+     pubnub.publish({
+          channel : "hello_world",
+          message : "[" + source + "]: " + txt,
+          callback: function(m){ console.log(m);}
+     })
+  }
+
+function publish() {
+  console.log("Going to publish on demand")
+  txt = document.getElementById("theText").value;
+  pub(txt)
+};</script>
+
+</head>
+<body>
+  <img src="/images/cng.png" height="48" width="48"/><br/>
+  <img src="{{ .PictureURL}}" height="48"/><br/><br/>
+  Welcome, <b>{{ .Email }}</b><br/><br/>
+
+  <input type="text" width="150" id="theText"/>&nbsp;
+  <button onclick="publish()">SEND</button><br/>
+
+  <div id="chatLog">
+  </div>
+</body>
+
+
+</html>
