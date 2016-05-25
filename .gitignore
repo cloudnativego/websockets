@@ -24,3 +24,4 @@ _testmain.go
 
 websockets
 /local_config/env
+/vendor
