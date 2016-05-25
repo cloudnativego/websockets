@@ -3,11 +3,11 @@
 # Websockets
 Web sockets sample using third party messaging provider PubNub.
 
-To run this example, you will need to create a file called `env` in the `local_config` directory, and then run using Wercker:
+To run this example:
 
-```
-./runlocal local_config/env
-```
+* `glide install` to create/update your vendor directory
+* Create a file called `env` in the `local_config` directory
+* Run using Wercker:  `./runlocal local_config/env`
 
 This file creates environment variables with the Wercker `X_` prefix so that they will be injected into the Docker container when run. Your file should look something like this:
 
