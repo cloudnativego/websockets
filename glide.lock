@@ -1,0 +1,40 @@
+hash: 107b361a641f9c44c4669cbabc1c91d4a7bc1c76c2d13fed4d5e3cc9838c22fc
+updated: 2016-05-25T10:59:52.189568966-04:00
+imports:
+- name: github.com/astaxie/beego
+  version: 88c5dfa6ead42e624c2e7d9e04eab6cb2d07412a
+  subpackages:
+  - session
+  - config
+  - context
+  - grace
+  - logs
+  - toolbox
+  - utils
+- name: github.com/cloudfoundry-community/go-cfenv
+  version: 18fa650ff6b7b4f6bd8f8611408d1533eb54a918
+- name: github.com/cloudnativego/cf-tools
+  version: f59655db37a9fbf2c5cf9095211b9950ff2dab24
+- name: github.com/codegangsta/negroni
+  version: ffbc66b612ee3eac2eba29aedce4c3a65e4dd0a1
+- name: github.com/gorilla/context
+  version: a8d44e7d8e4d532b6a27a02dd82abb31cc1b01bd
+- name: github.com/gorilla/mux
+  version: bd09be08ed4377796d312df0a45314e11b8f5dc1
+- name: github.com/mitchellh/mapstructure
+  version: d2dd0262208475919e1a362f675cfc0e7c10e905
+- name: github.com/pubnub/go
+  version: f5b5624f958630d370abed91bc62622d22a0dc6b
+  subpackages:
+  - messaging
+- name: github.com/unrolled/render
+  version: 198ad4d8b8a4612176b804ca10555b222a086b40
+- name: golang.org/x/net
+  version: 0c607074acd38c5f23d1344dfe74c977464d1257
+  subpackages:
+  - context
+- name: golang.org/x/oauth2
+  version: c406a4cc4ba462e5dc2f16225c5bd9488f9cbe10
+  subpackages:
+  - internal
+devImports: []
