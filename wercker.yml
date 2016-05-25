@@ -11,6 +11,8 @@ dev:
           cd $WERCKER_SOURCE_DIR
           go version
           go get -u github.com/cloudnativego/cf-tools/vcapinate
+          go get -u github.com/Masterminds/glide
+          glide install
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
 
     - script:
@@ -19,10 +21,6 @@ dev:
           export VCAP_SERVICES=`vcapinate -path=./local_config/vcap.yml`
           export VCAP_APPLICATION={}
           echo $VCAP_SERVICES
-
-    - script:
-        name: env
-        code: env
 
     - internal/watch:
         code: PORT=80 go run main.go
@@ -37,15 +35,15 @@ build:
         code: |
           cd $WERCKER_SOURCE_DIR
           go version
-          go get -u github.com/tools/godep
           go get -u github.com/cloudnativego/cf-tools/vcapinate
+          go get -u github.com/Masterminds/glide
+          glide install
           export PATH=$WERCKER_SOURCE_DIR/bin:$PATH
 
     # Test the project
     - script:
         name: go test
         code: |
-          go test -v -race
           go test ./server -v -race
 
     - script:
@@ -60,7 +58,7 @@ build:
     - script:
         name: go build
         code: |
-          PORT=80 go build ./main.go
+          go build
 
     - script:
         name: copy files to wercker output
@@ -72,8 +70,8 @@ deploy:
    - internal/docker-push:
        username: $USERNAME
        password: $PASSWORD
-       cmd: /pipeline/source/main
+       cmd: /pipeline/source/websockets
        port: "8080"
-       tag: v1
-       repository: cloudnativego/secureweb
+       tag: latest
+       repository: cloudnativego/websockets
        registry: https://registry.hub.docker.com
